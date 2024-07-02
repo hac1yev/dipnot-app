@@ -1,11 +1,11 @@
-
+import Dashboard from "./components/Dashboard/Dashboard"
 
 function App() {
 
   return (
-    <div>
-      Hello World
-    </div>
+    <>
+      <Dashboard />
+    </>
   )
 }
 
