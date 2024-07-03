@@ -8,43 +8,37 @@ import Toolbar from '@mui/material/Toolbar';
 import SearchIcon from '@mui/icons-material/Search';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
+import CloseIcon from '@mui/icons-material/Close';
 // import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-// import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import NotificationsIcon from '@mui/icons-material/Notifications';
 import dipnot_logo from '../../assets/dipnote-logo.svg';
 import { Avatar, InputBase, Stack, useMediaQuery } from '@mui/material';
 import './Dashboard.scss'
-// import { mainListItems, secondaryListItems } from './listItems';
-// import Chart from './Chart';
-// import Deposits from './Deposits';
-// import Orders from './Orders';
 
 const drawerWidth = 340;
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
-})(({ theme, open }) => ({
+})(({ theme }) => ({
   zIndex: theme.zIndex.drawer + 1,
   transition: theme.transitions.create(['width', 'margin'], {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
   }),
-  ...(open && {
+  ...{
     marginLeft: drawerWidth,
     width: `calc(100% - ${drawerWidth}px)`,
     transition: theme.transitions.create(['width', 'margin'], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
     }),
-  }),
+  },
+  [theme.breakpoints.down('769')]: {
+    width: '100%',
+  },
 }));
 
 const Search = styled('div')(({ theme }) => ({
@@ -78,7 +72,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: 'inherit',
   '& .MuiInputBase-input': {
     padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create('width'),
     width: '100%',
@@ -102,21 +95,42 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
           easing: theme.transitions.easing.sharp,
           duration: theme.transitions.duration.leavingScreen,
         }),
-        width: theme.spacing(7),
+        width: 0,
         [theme.breakpoints.up('sm')]: {
-          width: theme.spacing(9),
+          width: 0,
         },
       }),
+      [theme.breakpoints.down('769')]: {
+        ...(open && {
+          width: '100vw',
+          zIndex: 2000,
+        })
+      },
     },
   }),
 );
 
-// TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
 export default function Dashboard() {
   const [open, setOpen] = React.useState(true);
-  const matches = useMediaQuery('(min-width:600px)');
+  const matches = useMediaQuery('(min-width:769px)');
+
+  React.useEffect(() => {
+    if(window.innerWidth <= 768) {
+      setOpen(false);
+    }
+  }, []);
+
+  React.useEffect(() => {
+    window.addEventListener('resize', () => {
+      if(window.innerWidth <= 768) {
+        setOpen(false);
+      }else{
+        setOpen(true);
+      }
+    });
+  }, []);
 
   const toggleDrawer = () => {
     setOpen(!open);
@@ -142,7 +156,7 @@ export default function Dashboard() {
         >
           <Toolbar
             sx={{
-              p: 0, // keep right padding when drawer closed
+              p: 0, 
             }}
           >
             <Typography
@@ -151,7 +165,7 @@ export default function Dashboard() {
               color="#000"
               
               noWrap
-              sx={{ flexGrow: 1, display: 'flex', px: 3, alignItems: 'center' }}
+              sx={{ flexGrow: 1, display: 'flex', px: 3, alignItems: 'center', pr: !matches && 0 }}
             >
               <IconButton
                 edge="start"
@@ -160,10 +174,15 @@ export default function Dashboard() {
                 onClick={toggleDrawer}
                 sx={{
                   marginRight: '10px',
-                  // marginLeft: '20px'
+                  display: matches ? 'none' : 'block'
                 }}
               >
-                <MenuIcon sx={{ fontSize: '30px' }} />
+                <MenuIcon sx={{ 
+                    fontSize: '30px' ,
+                    display: 'flex',
+                    alignItems: 'center'
+                  }} 
+                />
               </IconButton>
               <Search sx={{ height: '100%' }}>
                 <SearchIconWrapper>
@@ -192,7 +211,7 @@ export default function Dashboard() {
             sx={{
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'center',
+              justifyContent: matches ? 'center' : 'space-between',
               px: [1],
               height: '90px'
             }}
@@ -206,6 +225,23 @@ export default function Dashboard() {
               alt="The house from the offer."
               src={dipnot_logo}
             />
+            <IconButton
+                edge="start"
+                color="#000"
+                aria-label="open drawer"
+                onClick={toggleDrawer}
+                sx={{
+                  marginRight: '10px',
+                  display: matches ? 'none' : 'block'
+                }}
+              >
+                <CloseIcon sx={{ 
+                    fontSize: '30px',
+                    display: 'flex',
+                    alignItems: 'center' 
+                  }} 
+                />
+              </IconButton>
           </Toolbar>
           <Divider />
           {/* <List component="nav">
