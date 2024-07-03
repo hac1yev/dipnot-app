@@ -15,7 +15,7 @@ import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import dipnot_logo from '../../assets/dipnote-logo.svg';
-import { Avatar, InputBase, Stack, useMediaQuery } from '@mui/material';
+import { Avatar, Container, Grid, InputBase, Paper, Stack, useMediaQuery } from '@mui/material';
 import './Dashboard.scss'
 
 const drawerWidth = 340;
@@ -206,7 +206,7 @@ export default function Dashboard() {
             </Stack>
           </Toolbar>
         </AppBar>
-        <Drawer variant="permanent" open={open} sx={{ height: '100px' }}>
+        <Drawer variant="permanent" open={open} sx={{ height: 'fit-content' }}>
           <Toolbar
             sx={{
               display: 'flex',
@@ -249,6 +249,7 @@ export default function Dashboard() {
             <Divider sx={{ my: 1 }} />
             {secondaryListItems}
           </List> */}
+          
         </Drawer>
         <Box
           component="main"
@@ -263,7 +264,7 @@ export default function Dashboard() {
           }}
         >
           <Toolbar />
-          {/* <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+          <Container maxWidth="lg" sx={{ mt: 6, mb: 4 }}>
             <Grid container spacing={3}>
               <Grid item xs={12} md={7} lg={8}>
                 <Paper
@@ -288,7 +289,7 @@ export default function Dashboard() {
                 </Paper>
               </Grid>
             </Grid>
-          </Container> */}
+          </Container>
         </Box>
       </Box>
     </ThemeProvider>
