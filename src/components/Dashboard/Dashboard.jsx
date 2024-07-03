@@ -304,7 +304,10 @@ export default function Dashboard() {
           <Container maxWidth="lg" sx={{ mt: 6, mb: 4 }}>
             <Grid container spacing={3}>
               <Grid item xs={12} md={7} lg={8}>
-                <Card sx={{ width: '100%' }}>
+                <Card sx={{ 
+                  width: '100%',
+                  background: 'linear-gradient(90deg, rgba(219, 244, 255, 0.09) 2.55%, #FFFFFF 100%)'
+                }}>
                   <CardHeader
                     avatar={
                       <Avatar sx={{ bgcolor: "red" }} aria-label="recipe">
