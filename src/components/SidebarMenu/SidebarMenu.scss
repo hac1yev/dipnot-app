@@ -1,0 +1,32 @@
+.sidebar-wrapper {
+    padding: 10px 20px;
+    height: calc(100vh - 91px);
+    color: rgba(51, 51, 51, 1);
+    overflow: hidden;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    a {
+        color: rgba(51, 51, 51, 1);
+        text-decoration: none;
+    }
+
+    .active {
+        background-color: rgba(0, 0, 0, 0.03);
+
+        div {
+            svg, span {
+                color: rgba(5, 104, 214, 1);
+            }
+        }
+    }
+
+    ul .sidebar-list-item div span {
+        font-size: 18px;
+    }
+}
+
+.sidebar-wrapper::webkit-scrollbar {
+    display: none;
+}
