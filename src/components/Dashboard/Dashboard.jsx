@@ -1,47 +1,18 @@
 import * as React from "react";
-import {
-  styled,
-  createTheme,
-  ThemeProvider,
-  alpha,
-} from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
+import { Avatar, InputBase, Stack, useMediaQuery, CssBaseline, Box, Typography, Divider, IconButton, Toolbar } from "@mui/material";
+import { styled, createTheme, ThemeProvider, alpha } from "@mui/material/styles";
 import MuiDrawer from "@mui/material/Drawer";
-import Box from "@mui/material/Box";
 import MuiAppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
 import SearchIcon from "@mui/icons-material/Search";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
-import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import CloseIcon from "@mui/icons-material/Close";
-import ShareIcon from "@mui/icons-material/Share";
-
-// import List from '@mui/material/List';
-import Typography from "@mui/material/Typography";
-import Divider from "@mui/material/Divider";
-import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import dipnot_logo from "../../assets/dipnote-logo.svg";
-import {
-  Avatar,
-  Card,
-  CardActions,
-  CardContent,
-  CardHeader,
-  CardMedia,
-  Container,
-  Grid,
-  InputBase,
-  Paper,
-  Stack,
-  useMediaQuery,
-} from "@mui/material";
+import SidebarMenu from "../SidebarMenu/SidebarMenu";
+import Home from "../../pages/Home/Home";
 import "./Dashboard.scss";
+import { Route, Routes } from "react-router-dom";
 
 const drawerWidth = 340;
 
@@ -281,91 +252,13 @@ export default function Dashboard() {
               />
             </IconButton>
           </Toolbar>
-          <Divider />
-          {/* <List component="nav">
-            {mainListItems}
-            <Divider sx={{ my: 1 }} />
-            {secondaryListItems}
-          </List> */}
+          <Divider/>
+          <SidebarMenu />
         </Drawer>
-        <Box
-          component="main"
-          sx={{
-            backgroundColor: (theme) =>
-              theme.palette.mode === "light"
-                ? theme.palette.grey[100]
-                : theme.palette.grey[900],
-            flexGrow: 1,
-            height: "100vh",
-            overflow: "auto",
-          }}
-        >
-          <Toolbar />
-          <Container maxWidth="lg" sx={{ mt: 6, mb: 4 }}>
-            <Grid container spacing={3}>
-              <Grid item xs={12} md={7} lg={8}>
-                <Card sx={{ 
-                  width: '100%',
-                  background: 'linear-gradient(90deg, rgba(219, 244, 255, 0.09) 2.55%, #FFFFFF 100%)'
-                }}>
-                  <CardHeader
-                    avatar={
-                      <Avatar sx={{ bgcolor: "red" }} aria-label="recipe">
-                        R
-                      </Avatar>
-                    }
-                    action={
-                      <IconButton aria-label="settings">
-                        <MoreVertIcon />
-                      </IconButton>
-                    }
-                    title="Shrimp and Chorizo Paella"
-                    subheader="September 14, 2016"
-                  />
-                  <Box sx={{ px: 2, borderRadius: '19px' }}>
-                    <CardMedia
-                      sx={{ borderRadius: '19px' }}
-                      component="img"
-                      height="194"
-                      image="https://carsguide-res.cloudinary.com/image/upload/f_auto,fl_lossy,q_auto,t_default/v1/editorial/2023-Ford-Mustang-Dark-Horse-red-press-image-1001x565p-(1).jpg"
-                      alt="Paella dish"
-                    />
-                  </Box>
-                  <CardContent>
-                    <Typography variant="body2" color="text.secondary">
-                      This impressive paella is a perfect party dish and a fun
-                      meal to cook together with your guests. Add 1 cup of
-                      frozen peas along with the mussels, if you like.
-                    </Typography>
-                  </CardContent>
-                  <CardActions disableSpacing sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <Box>
-                      <IconButton aria-label="add to favorites">
-                        <FavoriteBorderIcon />
-                      </IconButton>
-                      <IconButton aria-label="share">
-                        <ChatBubbleOutlineIcon />
-                      </IconButton>
-                    </Box>
-                    <IconButton aria-label="share">
-                      <BookmarkBorderIcon />
-                    </IconButton>
-                  </CardActions>
-                </Card>
-              </Grid>
-              <Grid item xs={12} md={5} lg={4}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: "flex",
-                    flexDirection: "column",
-                    height: 240,
-                  }}
-                ></Paper>
-              </Grid>
-            </Grid>
-          </Container>
-        </Box>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {/* <Route path="/popular" element={<Popular />} /> */}
+        </Routes>
       </Box>
     </ThemeProvider>
   );
