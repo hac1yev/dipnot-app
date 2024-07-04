@@ -153,6 +153,7 @@ export default function Dashboard() {
           <Toolbar
             sx={{
               p: 0,
+              pr: 2,
             }}
           >
             <Typography
