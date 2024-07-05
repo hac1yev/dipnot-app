@@ -26,7 +26,7 @@ const SidebarMenu = () => {
             }
           >
             <ListItemButton>
-              <ListItemIcon>
+              <ListItemIcon sx={{ minWidth: '40px' }}>
                 <HomeIcon />
               </ListItemIcon>
               <ListItemText primary="Ana səhifə" />
@@ -43,7 +43,7 @@ const SidebarMenu = () => {
             }
           >
             <ListItemButton>
-              <ListItemIcon>
+              <ListItemIcon sx={{ minWidth: '40px' }}>
                 <StarIcon />
               </ListItemIcon>
               <ListItemText primary="Populyar" />
@@ -131,7 +131,7 @@ const SidebarMenu = () => {
             className="sidebar-list-item"
           >
             <ListItemButton>
-              <ListItemIcon>
+              <ListItemIcon sx={{ minWidth: '40px' }}>
                 <HelpOutlineOutlinedIcon />
               </ListItemIcon>
               <ListItemText primary="Kömək" />
@@ -144,7 +144,7 @@ const SidebarMenu = () => {
             className="sidebar-list-item"
           >
             <ListItemButton>
-              <ListItemIcon>
+              <ListItemIcon sx={{ minWidth: '40px' }}>
                 <BuildOutlinedIcon />
               </ListItemIcon>
               <ListItemText primary="App & Tools" />
