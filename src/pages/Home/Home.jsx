@@ -12,17 +12,19 @@ const Home = () => {
             theme.palette.mode === "light"
             ? theme.palette.grey[100]
             : theme.palette.grey[900],
-        flexGrow: 1,
-        height: "100vh",
-        overflow: "auto",
-        }}
+          flexGrow: 1,
+          height: "100vh",
+          overflow: "auto",
+        }}  
     >
         <Toolbar />
-        <Container maxWidth="lg" sx={{ mt: 6, mb: 4 }}>
-        <Grid container spacing={3}>
-            <Posts />
+        <Container maxWidth="lg" sx={{ mt: 6, mb: 4 }} className='home-container-wrapper'>
+          <Grid container spacing={3} md={12} lg={8}>
+              <Posts />
+          </Grid>
+          <Grid container md={12} lg={4}>
             <Community />
-        </Grid>
+          </Grid>
         </Container>
     </Box>
   )

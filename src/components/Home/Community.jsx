@@ -1,16 +1,28 @@
-import { Grid, Paper } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
+import { community_data } from "../../dummy-data/communitydata";
 
 const Community = () => {
   return (
-    <Grid item xs={12} md={5} lg={4}>
-      <Paper
-        sx={{
-          p: 2,
-          display: "flex",
-          flexDirection: "column",
-          height: 240,
-        }}
-      ></Paper>
+    <Grid item className="community-list">
+      <Box sx={{ background: '#fff', py: 4, height: 'fit-content', position: 'sticky', top: '112px' }} className="community-box">
+        <Typography sx={{ fontSize: '22px', px: 5, pb: 2, fontWeight: '600', lineHeight: '30px' }}>Community</Typography>
+        <Container>
+          <Grid container>
+            {community_data.map((item, index) => (
+              <Box key={index}>
+                {item.map((obj) => (
+                  <Grid item key={obj.id}>
+                    <Box>
+                      <Box component="img" src={obj.img} />
+                      <Typography sx={{ fontSize: '14px', fontWeight: '600', lineHeight: '19px' }}>{obj.title}</Typography>
+                    </Box>
+                  </Grid>
+                ))}
+              </Box>
+            ))}
+          </Grid>
+        </Container>
+      </Box>
     </Grid>
   );
 };
