@@ -152,6 +152,7 @@ const SidebarMenu = () => {
           </ListItem>
         </Link>
       </List>
+      
     </Box>
   );
 };
