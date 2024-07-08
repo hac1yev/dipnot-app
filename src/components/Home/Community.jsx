@@ -11,7 +11,7 @@ const Community = () => {
             {community_data.map((item, index) => (
               <Box key={index}>
                 {item.map((obj) => (
-                  <Grid item key={obj.id}>
+                  <Grid item key={obj.id} >
                     <Box>
                       <Box component="img" src={obj.img} />
                       <Typography sx={{ fontSize: '14px', fontWeight: '600', lineHeight: '19px' }}>{obj.title}</Typography>
