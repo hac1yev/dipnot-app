@@ -19,10 +19,10 @@ const Home = () => {
     >
         <Toolbar />
         <Container maxWidth="lg" sx={{ mt: 6, mb: 4 }} className='home-container-wrapper'>
-          <Grid container spacing={3} md={8}>
+          <Grid container spacing={3} md={12} lg={8}>
               <Posts />
           </Grid>
-          <Grid container md={4}>
+          <Grid container md={12} lg={4}>
             <Community />
           </Grid>
         </Container>
