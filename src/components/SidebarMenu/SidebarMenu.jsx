@@ -55,7 +55,7 @@ const SidebarMenu = () => {
       <Divider />
 
       <Box sx={{ pt: 2, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <Typography sx={{ color: 'rgba(2, 66, 137, 1)', fontSize: '20px', fontWeight: '500' }}>Qruplar</Typography>
+        <Typography variant="h4">Qruplar</Typography>
         <Box 
           component={"span"} 
           sx={{ 
@@ -103,18 +103,18 @@ const SidebarMenu = () => {
       <Divider sx={{ py: 1 }} />
 
       <Box sx={{ pt: 2, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <Typography sx={{ color: 'rgba(2, 66, 137, 1)', fontSize: '20px', fontWeight: '500' }}>Kategoriyalar</Typography>
+        <Typography variant="h4">Kategoriyalar</Typography>
       </Box>
 
       <Box sx={{ p: 2, display: 'flex', flexDirection: 'column', gap: '12px' }} className="sidebar-menu-category">
         <Link to="/">
-          <Typography sx={{ color: 'rgba(51, 51, 51, 1)', fontSize: '18px', fontWeight: '500' }}>Dizayn</Typography>
+          <Typography variant="subtitle1">Dizayn</Typography>
         </Link>
         <Link to="/">
-          <Typography sx={{ color: 'rgba(51, 51, 51, 1)', fontSize: '18px', fontWeight: '500' }}>Texnologiya</Typography>
+          <Typography variant="subtitle1">Texnologiya</Typography>
         </Link>
         <Link to="/">
-          <Typography sx={{ color: 'rgba(51, 51, 51, 1)', fontSize: '18px', fontWeight: '500' }}>Proqramlaşdırma</Typography>
+          <Typography variant="subtitle1">Proqramlaşdırma</Typography>
         </Link>
       </Box>
       

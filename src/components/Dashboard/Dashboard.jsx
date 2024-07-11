@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Avatar, InputBase, Stack, useMediaQuery, CssBaseline, Box, Typography, Divider, IconButton, Toolbar } from "@mui/material";
-import { styled, createTheme, ThemeProvider, alpha } from "@mui/material/styles";
+import { styled, alpha } from "@mui/material/styles";
 import MuiDrawer from "@mui/material/Drawer";
 import MuiAppBar from "@mui/material/AppBar";
 import SearchIcon from "@mui/icons-material/Search";
@@ -13,6 +13,7 @@ import SidebarMenu from "../SidebarMenu/SidebarMenu";
 import Home from "../../pages/Home/Home";
 import "./Dashboard.scss";
 import { Route, Routes } from "react-router-dom";
+import Post from "../../pages/Post/Post";
 
 const drawerWidth = 340;
 
@@ -106,8 +107,6 @@ const Drawer = styled(MuiDrawer, {
   },
 }));
 
-const defaultTheme = createTheme();
-
 export default function Dashboard() {
   const [open, setOpen] = React.useState(true);
   const matches = useMediaQuery("(min-width:769px)");
@@ -133,8 +132,7 @@ export default function Dashboard() {
   };
 
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: "flex" }}>
         <CssBaseline />
         <AppBar
           position="absolute"
@@ -258,9 +256,9 @@ export default function Dashboard() {
         </Drawer>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/posts/:postId" element={<Post />} />
           {/* <Route path="/popular" element={<Popular />} /> */}
         </Routes>
-      </Box>
-    </ThemeProvider>
+    </Box>
   );
 }
