@@ -126,9 +126,11 @@ const PostComponent = () => {
             />
             <Button
               type="submit"              
-              sx={{ ml: 1, height: "100%" }}
+              sx={{ ml: 1, height: "100%", p: '0 3px' }}
             >
-              <SendIcon sx={{ color: 'primary.main' }} />
+              <IconButton>
+                <SendIcon sx={{ color: 'primary.main' }} />
+              </IconButton>
             </Button>
           </Search>
         </Box>
