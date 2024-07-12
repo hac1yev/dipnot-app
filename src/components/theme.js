@@ -41,26 +41,26 @@ const theme = createTheme({
     h4: {
       fontSize: '22px',
       textAlign: 'center',
-      fontWeight: '600',
+      fontWeight: '500',
       lineHeight: '30px',
       color: 'rgba(0, 32, 67, 1)',
     },
     h5: {
       fontSize: '19.53px',
-      fontWeight: '600',
+      fontWeight: '500',
       lineHeight: '29.29px',
       color: 'rgba(0, 32, 67, 1)',
     },
     h6: {
       fontSize: '16px',
-      fontWeight: '700',
+      fontWeight: '600',
       lineHeight: '22px',
       color: '#000',
     },
     subtitle1: {
       color: 'rgba(51, 51, 51, 1)', 
-      fontSize: '18px', 
-      fontWeight: '500',
+      fontSize: '16px', 
+      fontWeight: '400',
       lineHeight: '22px'
     },
     subtitle2: {
