@@ -5,11 +5,10 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { useState } from 'react';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
-import { Link } from 'react-router-dom';
 
 const PostComments = () => {
     const [anchorEl, setAnchorEl] = useState(null);
-    const [response,setResponses] = useState(1);
+    const response = 1;
     const [expand,setExpand] = useState(false);
     const open = Boolean(anchorEl);
     const id = open ? 'simple-popover' : undefined;

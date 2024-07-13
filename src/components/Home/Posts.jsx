@@ -59,7 +59,8 @@ const Posts = () => {
           </Link>
           <CardActions
             disableSpacing
-            sx={{ display: "flex", justifyContent: "space-between", mt: 3 }}
+            className="space-between"
+            sx={{ mt: 3 }}
           >
             <Box>
               <IconButton aria-label="add to favorites">

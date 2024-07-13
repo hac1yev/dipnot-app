@@ -40,8 +40,7 @@ const theme = createTheme({
     },
     h4: {
       fontSize: '22px',
-      textAlign: 'center',
-      fontWeight: '500',
+      fontWeight: '600',
       lineHeight: '30px',
       color: 'rgba(0, 32, 67, 1)',
     },
@@ -53,7 +52,7 @@ const theme = createTheme({
     },
     h6: {
       fontSize: '16px',
-      fontWeight: '600',
+      fontWeight: '700',
       lineHeight: '22px',
       color: '#000',
     },
@@ -64,7 +63,10 @@ const theme = createTheme({
       lineHeight: '22px'
     },
     subtitle2: {
-      
+      fontSize: '14px',
+      color: 'rgba(2, 66, 137, 1)',
+      fontWeight: '500',
+      lineHeight: '19px'
     },
     subtitle3: {
       fontSize: '12px',

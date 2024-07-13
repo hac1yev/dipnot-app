@@ -1,11 +1,16 @@
-import { alpha, Avatar, Box, Card, CardActions, CardContent, CardHeader, CardMedia, Grid, IconButton, InputBase, styled, Typography } from "@mui/material";
+import { alpha, Avatar, Box, Card, CardActions, CardContent, CardHeader, CardMedia, Grid, IconButton, InputBase, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Popover, styled, Typography } from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
+import DeleteIcon from '@mui/icons-material/Delete';
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import LoopIcon from '@mui/icons-material/Loop';
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
+import IosShareIcon from '@mui/icons-material/IosShare';
 import SendIcon from '@mui/icons-material/Send';
 import '../../pages/Post/Post.scss';
 import PostComments from "./PostComments";
+import { useState } from "react";
 
 const Search = styled("form")(({ theme }) => ({
   position: "relative",
@@ -52,12 +57,16 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 
 const PostComponent = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const id = open ? 'simple-popover' : undefined;
+
   return (
     <Grid item>
       <Card
         sx={{
           width: "100%",
-          background: 'rgba(4, 118, 168, 0.07)'
+          background: 'rgba(4, 118, 168, 0.03)'
         }}
       >
         <CardHeader
@@ -67,9 +76,69 @@ const PostComponent = () => {
             </Avatar>
           }
           action={
-            <IconButton aria-label="settings">
-              <MoreVertIcon />
-            </IconButton>
+            <>
+              <IconButton aria-label="settings" aria-describedby={id} onClick={(e) => setAnchorEl(e.currentTarget)}>
+                <MoreVertIcon />
+              </IconButton>
+              <Popover
+                className='comment-popover'
+                id={id}
+                open={open}
+                anchorEl={anchorEl}
+                onClose={() => setAnchorEl(null)}
+                anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'left',
+                }}
+              >
+                <List sx={{ pb: '10px', width: '130px' }}>
+                    <ListItem
+                        disablePadding
+                        className="sidebar-list-item"
+                    >
+                        <ListItemButton sx={{ py: 0 }}>
+                            <ListItemIcon sx={{ minWidth: '40px' }}>
+                                <LoopIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="Paylaş" />
+                        </ListItemButton>
+                    </ListItem>
+                    <ListItem
+                        disablePadding
+                        className="sidebar-list-item"
+                    >
+                        <ListItemButton sx={{ py: 0 }}>
+                            <ListItemIcon sx={{ minWidth: '40px' }}>
+                                <IosShareIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="Göndər" />
+                        </ListItemButton>
+                    </ListItem>
+                    <ListItem
+                        disablePadding
+                        className="sidebar-list-item"
+                    >
+                        <ListItemButton sx={{ py: 0 }}>
+                            <ListItemIcon sx={{ minWidth: '40px' }}>
+                                <VisibilityOffOutlinedIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="Gizlət" />
+                        </ListItemButton>
+                    </ListItem>
+                    <ListItem
+                        disablePadding
+                        className="sidebar-list-item"
+                    >
+                        <ListItemButton sx={{ py: 0 }}>
+                            <ListItemIcon sx={{ minWidth: '40px' }}>
+                                <DeleteIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="Sil" />
+                        </ListItemButton>
+                    </ListItem>
+                </List>
+              </Popover>
+            </>
           }
           title={
             <div style={{ display: 'flex', gap: '5px' }}>
@@ -101,20 +170,21 @@ const PostComponent = () => {
         </Box>
         <CardActions
           disableSpacing
-          sx={{ display: "flex", justifyContent: "space-between", mt: 3, px:2 }}
+          className="space-between"
+          sx={{ mt: 1, px:2 }}
         >
           <Box>
-            <IconButton aria-label="add to favorites" sx={{ bgcolor: 'rgba(51, 51, 51, 0.08)', borderRadius: '19px', px: 2  }}>
-              <Box component={"span"} sx={{ fontSize: '19px', mr: '3px' }}>40</Box>
-              <FavoriteBorderIcon />
+            <IconButton aria-label="add to favorites" sx={{ bgcolor: 'rgba(51, 51, 51, 0.08)', borderRadius: '19px', p: '5px 15px'  }}>
+              <Typography variant="subtitle2" sx={{ mr: '3px' }}>40</Typography>
+              <FavoriteBorderIcon sx={{ fontSize: '20px', color: 'rgba(2, 66, 137, 1)' }} />
             </IconButton>
-            <IconButton aria-label="share" sx={{ bgcolor: 'rgba(51, 51, 51, 0.08)', ml: 2, borderRadius: '19px', px: 2 }}>
-              <Box component={"span"} sx={{ fontSize: '19px', mr: '3px' }}>22</Box>
-              <ChatBubbleOutlineIcon />
+            <IconButton aria-label="share" sx={{ bgcolor: 'rgba(51, 51, 51, 0.08)', ml: 1, borderRadius: '19px', p: '5px 15px' }}>
+              <Typography variant="subtitle2" sx={{ mr: '3px' }}>21</Typography>
+              <ChatBubbleOutlineIcon sx={{ fontSize: '20px', color: 'rgba(2, 66, 137, 1)' }} />
             </IconButton>
           </Box>
           <IconButton aria-label="share">
-            <BookmarkBorderIcon />
+            <BookmarkBorderIcon sx={{ color: '#000' }} />
           </IconButton>
         </CardActions>
         <Box className="comment-box" sx={{ my: 2 }}>
