@@ -19,7 +19,7 @@ const PostRightbar = () => {
             <Typography variant="subtitle2" sx={{ color: '#000' }}>Üzv</Typography>
           </Box>
           <Box className="flex-column">
-            <Typography variant="h6">4940</Typography>
+            <Typography variant="h6">235</Typography>
             <Box component={"span"} sx={{ display: 'flex', alignItems: 'center', gap: '3px' }}>
               <Box sx={{ bgcolor: 'rgba(4, 178, 31, 1)', borderRadius: '4px', width: '8px', height: '8px' }}></Box>
               <Typography variant="subtitle2" sx={{ color: '#000' }}>Online</Typography>
