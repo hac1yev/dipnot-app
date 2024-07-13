@@ -87,14 +87,14 @@
     background-color: rgb(2, 66, 137, 0.1)!important;
 }
 
-.community-list {
+.post-list {
     width: 23%;
     position: fixed;
     top: 112px;
     bottom: 0;
 }
 
-.community-list > div {
+.post-list > div {
     overflow: hidden;
     overflow-y: auto;
     -ms-overflow-style: none;
@@ -102,20 +102,20 @@
     height: calc(100vh - 112px);
 }
 
-.community-list > div::-webkit-scrollbar {
+.post-list > div::-webkit-scrollbar {
     display: none;
 }
 
 
 @media screen and (max-width: 1199.5px) {
-    .community-list {
+    .post-list {
         width: 100%;
         position: static;
         margin-top: 15px;
         margin-top: 15px;
     }
 
-    .community-list > div {
+    .post-list > div {
         width: 100%;
         overflow: initial;
         overflow-y: initial;

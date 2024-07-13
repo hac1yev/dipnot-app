@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Toolbar } from "@mui/material";
+import { Box, Grid, Toolbar } from "@mui/material";
 import PostRightbar from "../../components/Post/PostRightbar";
 import PostComponent from "../../components/Post/PostComponent";
 

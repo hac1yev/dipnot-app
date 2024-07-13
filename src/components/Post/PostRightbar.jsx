@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 const PostRightbar = () => {
   return (
-    <Grid item className="community-list">
+    <Grid item className="post-list">
       <Box sx={{ background: '#fff', p: 2 }}>
 
         <Box className="space-between">
