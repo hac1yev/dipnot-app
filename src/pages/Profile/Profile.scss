@@ -1,0 +1,61 @@
+.create-post-form-wrapper {
+    width: 100%; 
+    height: 50px; 
+    cursor: pointer;
+
+    .create-post-form {
+        width: 100%; 
+        height: 100%; 
+        gap: 10px;
+
+        > div {
+            background-color: #fff; 
+            width: 100%; 
+            height: 100%; 
+        }
+
+        .create-post-button {
+            text-wrap: nowrap; 
+            width: 130px; 
+            height: 50px;
+        }
+    }
+}
+
+.tabs-ul > div > div {
+    overflow: hidden;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    display: flex;
+    justify-content: center;
+
+    .tab-li {
+        color: rgba(51, 51, 51, 1);
+    }
+
+    .tab-li.active {
+        color: rgba(5, 104, 214, 1);
+    }
+}
+
+.tabs-ul > div > div::-webkit-scrollbar {
+    display: none;
+}
+
+.tabs-ul .css-6nyzm1-MuiTabs-indicator {
+    display: none!important;
+}
+
+.dialog-wrapper div > form{
+    padding: 20px;
+    max-width: 700px;
+    width: 100%;
+    margin: 0;
+}
+
+@media screen and (max-width: 1199.5px) {
+    .profile-grid {
+        margin-top: 15px;
+    }
+}

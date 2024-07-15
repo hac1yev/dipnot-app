@@ -12,8 +12,9 @@ import dipnot_logo from "../../assets/dipnote-logo.svg";
 import SidebarMenu from "../SidebarMenu/SidebarMenu";
 import Home from "../../pages/Home/Home";
 import "./Dashboard.scss";
-import { Route, Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import Post from "../../pages/Post/Post";
+import Profile from "../../pages/Profile/Profile";
 
 const drawerWidth = 340;
 
@@ -209,7 +210,9 @@ export default function Dashboard() {
               >
                 <NotificationsNoneIcon />
               </IconButton>
-              <Avatar alt="Remy Sharp" src="" />
+              <Link to="/profile">
+                <Avatar alt="Remy Sharp" src="" />
+              </Link>
             </Stack>
           </Toolbar>
         </AppBar>
@@ -257,6 +260,7 @@ export default function Dashboard() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/posts/:postId" element={<Post />} />
+          <Route path="/profile" element={<Profile />} />
           {/* <Route path="/popular" element={<Popular />} /> */}
         </Routes>
     </Box>
