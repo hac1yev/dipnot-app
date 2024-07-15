@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Toolbar } from '@mui/material';
+import { Box, Grid, Toolbar } from '@mui/material';
 import Community from '../../components/Home/Community';
 import Posts from '../../components/Home/Posts';
 import './Home.scss';
