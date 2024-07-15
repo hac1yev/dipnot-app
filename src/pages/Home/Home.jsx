@@ -18,14 +18,14 @@ const Home = () => {
         }}  
     >
         <Toolbar />
-        <Container maxWidth="lg" sx={{ mt: 6, mb: 4 }} className='home-container-wrapper'>
-          <Grid container spacing={3} md={12} lg={8}>
+        <Grid container sx={{ py: 6, px: 1 }}>
+          <Grid container lg={8} sx={{ px: 1 }}>
               <Posts />
           </Grid>
-          <Grid container md={12} lg={4}>
+          <Grid container lg={4} sx={{ px: 1 }} className='home-grid'>
             <Community />
           </Grid>
-        </Container>
+        </Grid>
     </Box>
   )
 }
