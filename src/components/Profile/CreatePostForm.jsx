@@ -1,4 +1,4 @@
-import { Box, Grid, OutlinedInput, styled } from "@mui/material";
+import { Grid, OutlinedInput, styled } from "@mui/material";
 import { useState } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
@@ -10,25 +10,37 @@ const FormGrid = styled(Grid)(() => ({
 
 const CreatePostForm = () => {
     const [value, setValue] = useState('');
+    const [textContent, setTextContent] = useState('');
 
+    const handleChange = (content, delta, source, editor) => {
+        setValue(content);
+        setTextContent(editor.getText());
+    };
 
-  return (
-    <>
-        <FormGrid item>
-            <OutlinedInput
-                sx={{ borderRadius: '14px' }}
-                id="first-name"
-                name="first-name"
-                type="name"
-                placeholder={`Başlıq*`}
-                autoComplete="first name"
-                required
+    console.log(textContent);
+
+    return (
+        <>
+            <FormGrid item>
+                <OutlinedInput
+                    sx={{ borderRadius: '14px' }}
+                    id="first-name"
+                    name="first-name"
+                    type="name"
+                    placeholder={`Başlıq*`}
+                    autoComplete="first name"
+                    required
+                />
+                {/* <Box component={"span"} sx={{ display: 'flex', justifyContent: 'flex-end', mt: 1 }}>0/100</Box> */}
+            </FormGrid>
+            <ReactQuill
+                theme="snow"
+                style={{ height: '150px', margin: '20px 0' }}
+                value={value}
+                onChange={handleChange}
             />
-            <Box component={"span"} sx={{ display: 'flex', justifyContent: 'flex-end', mt: 1 }}>0/100</Box>
-        </FormGrid>
-        <ReactQuill theme="snow" style={{ height: '150px', margin: '20px 0' }} value={value} onChange={setValue} />
-    </>
-  )
-}
+        </>
+    );
+};
 
-export default CreatePostForm
+export default CreatePostForm;
