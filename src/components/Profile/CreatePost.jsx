@@ -105,8 +105,9 @@ const CreatePost = () => {
                     </CustomTabPanel>
                 </Box>
                 <DialogActions>
-                    <Button onClick={handleClose}>Cancel</Button>
-                    <Button type="submit">Subscribe</Button>
+                    <Button onClick={handleClose} sx={{ bgcolor: 'secondary.main', color: 'rgba(0, 0, 0, 0.55)' }}>Yadda saxla</Button>
+                    <Button type="submit" sx={{ bgcolor: 'secondary.main', color: 'rgba(0, 0, 0, 0.55)' }}>Sil</Button>
+                    <Button type="submit" variant="contained">Paylaş</Button>
                 </DialogActions>
             </Dialog>
         </>
