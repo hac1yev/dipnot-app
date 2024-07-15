@@ -1,11 +1,20 @@
-import { Avatar, Box, Card, CardActions, CardContent, CardHeader, CardMedia, Grid, IconButton, Typography } from "@mui/material";
+import { Avatar, Box, Card, CardActions, CardContent, CardHeader, CardMedia, Grid, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Popover, Typography } from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
+import LoopIcon from '@mui/icons-material/Loop';
+import IosShareIcon from '@mui/icons-material/IosShare';
+import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
+import DeleteIcon from '@mui/icons-material/Delete';
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const MyPosts = () => {
+    const [anchorEl, setAnchorEl] = useState(null);
+    const open = Boolean(anchorEl);
+    const id = open ? 'simple-popover' : undefined;
+
   return (
     <Box sx={{ gap: '20px', display: 'flex', flexDirection: 'column' }}>
       <Grid item>
@@ -22,9 +31,69 @@ const MyPosts = () => {
               </Avatar>
             }
             action={
-              <IconButton aria-label="settings">
-                <MoreVertIcon />
-              </IconButton>
+                <>
+                    <IconButton aria-label="settings" aria-describedby={id} onClick={(e) => setAnchorEl(e.currentTarget)}>
+                        <MoreVertIcon />
+                    </IconButton>
+                    <Popover
+                        className='comment-popover'
+                        id={id}
+                        open={open}
+                        anchorEl={anchorEl}
+                        onClose={() => setAnchorEl(null)}
+                        anchorOrigin={{
+                            vertical: 'bottom',
+                            horizontal: 'left',
+                        }}
+                    >
+                    <List sx={{ pb: '10px', width: '130px' }}>
+                        <ListItem
+                            disablePadding
+                            className="sidebar-list-item"
+                        >
+                            <ListItemButton sx={{ py: 0 }}>
+                                <ListItemIcon sx={{ minWidth: '40px' }}>
+                                    <LoopIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Paylaş" />
+                            </ListItemButton>
+                        </ListItem>
+                        <ListItem
+                            disablePadding
+                            className="sidebar-list-item"
+                        >
+                            <ListItemButton sx={{ py: 0 }}>
+                                <ListItemIcon sx={{ minWidth: '40px' }}>
+                                    <IosShareIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Göndər" />
+                            </ListItemButton>
+                        </ListItem>
+                        <ListItem
+                            disablePadding
+                            className="sidebar-list-item"
+                        >
+                            <ListItemButton sx={{ py: 0 }}>
+                                <ListItemIcon sx={{ minWidth: '40px' }}>
+                                    <VisibilityOffOutlinedIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Gizlət" />
+                            </ListItemButton>
+                        </ListItem>
+                        <ListItem
+                            disablePadding
+                            className="sidebar-list-item"
+                        >
+                            <ListItemButton sx={{ py: 0 }}>
+                                <ListItemIcon sx={{ minWidth: '40px' }}>
+                                    <DeleteIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Sil" />
+                            </ListItemButton>
+                        </ListItem>
+                    </List>
+                    </Popover>
+                </>
             }
             title={
               <div style={{ display: 'flex', gap: '5px' }}>
@@ -89,9 +158,69 @@ const MyPosts = () => {
               </Avatar>
             }
             action={
-              <IconButton aria-label="settings">
-                <MoreVertIcon />
-              </IconButton>
+                <>
+                    <IconButton aria-label="settings" aria-describedby={id} onClick={(e) => setAnchorEl(e.currentTarget)}>
+                        <MoreVertIcon />
+                    </IconButton>
+                    <Popover
+                        className='comment-popover'
+                        id={id}
+                        open={open}
+                        anchorEl={anchorEl}
+                        onClose={() => setAnchorEl(null)}
+                        anchorOrigin={{
+                            vertical: 'bottom',
+                            horizontal: 'left',
+                        }}
+                    >
+                    <List sx={{ pb: '10px', width: '130px' }}>
+                        <ListItem
+                            disablePadding
+                            className="sidebar-list-item"
+                        >
+                            <ListItemButton sx={{ py: 0 }}>
+                                <ListItemIcon sx={{ minWidth: '40px' }}>
+                                    <LoopIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Paylaş" />
+                            </ListItemButton>
+                        </ListItem>
+                        <ListItem
+                            disablePadding
+                            className="sidebar-list-item"
+                        >
+                            <ListItemButton sx={{ py: 0 }}>
+                                <ListItemIcon sx={{ minWidth: '40px' }}>
+                                    <IosShareIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Göndər" />
+                            </ListItemButton>
+                        </ListItem>
+                        <ListItem
+                            disablePadding
+                            className="sidebar-list-item"
+                        >
+                            <ListItemButton sx={{ py: 0 }}>
+                                <ListItemIcon sx={{ minWidth: '40px' }}>
+                                    <VisibilityOffOutlinedIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Gizlət" />
+                            </ListItemButton>
+                        </ListItem>
+                        <ListItem
+                            disablePadding
+                            className="sidebar-list-item"
+                        >
+                            <ListItemButton sx={{ py: 0 }}>
+                                <ListItemIcon sx={{ minWidth: '40px' }}>
+                                    <DeleteIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Sil" />
+                            </ListItemButton>
+                        </ListItem>
+                    </List>
+                    </Popover>
+                </>
             }
             title={
               <div style={{ display: 'flex', gap: '5px' }}>

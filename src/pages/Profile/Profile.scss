@@ -32,6 +32,10 @@
 
     .tab-li {
         color: rgba(51, 51, 51, 1);
+        text-transform: capitalize;
+        font-size: 16px;
+        line-height: 22px;
+        font-weight: 400;
     }
 
     .tab-li.active {
@@ -41,6 +45,16 @@
 
 .tabs-ul > div > div::-webkit-scrollbar {
     display: none;
+}
+
+.dialog-ul {
+    .tab-li {
+        font-size: 16px;
+        text-transform: capitalize;
+        font-weight: 400;
+        line-height: 19px;
+        color: rgba(0, 0, 0, 1);
+    }
 }
 
 .tabs-ul .css-6nyzm1-MuiTabs-indicator {

@@ -5,6 +5,9 @@ const theme = createTheme({
     primary: {
       main: 'rgba(0, 32, 67, 1)',
     },
+    secondary: {
+      main: 'rgba(168, 168, 168, 0.2)',
+    },
   },
   typography: {
     fontSize: 14,
