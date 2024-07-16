@@ -16,7 +16,7 @@ const MyPosts = () => {
     const id = open ? 'simple-popover' : undefined;
 
   return (
-    <Box sx={{ gap: '20px', display: 'flex', flexDirection: 'column' }}>
+    <Box sx={{ gap: '20px', display: 'flex', flexDirection: 'column', }}>
       <Grid item>
         <Card
           sx={{
