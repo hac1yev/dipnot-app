@@ -101,7 +101,7 @@ const ProfileRightbar = () => {
         <Grid item>
             <Box sx={{ background: '#fff', py: 2, height: 'fit-content', position: 'sticky', top: '112px' }} className="community-box">
                 <Typography sx={{ fontSize: '22px', pb: 0, fontWeight: '600' }}>Community</Typography>
-                <Grid container>
+                <Grid container sx={{ flexWrap: 'wrap', justifyContent: 'space-around' }}>
                     {profile_community_data.map((item) => (
                         <Grid item key={item.id} sm={6} sx={{ mt: 2 }}>
                             <Link to="/" style={{ textDecoration: 'none', color: '#000' }}>
