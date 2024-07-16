@@ -135,7 +135,19 @@
     }
 }
   
+.profile-interests-stack {
+    div span {
+        padding: 0 20px;
+    }
+}
 
+.profile-interest-add-button {
+    width: 100%;
+    text-transform: inherit!important;
+    font-size: 16px!important;
+    border-radius: 24px!important;
+    box-shadow: none!important;    
+}
 
 @media screen and (max-width: 1199.5px) {
     .profile-list {

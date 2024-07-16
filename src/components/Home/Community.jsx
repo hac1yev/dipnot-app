@@ -1,5 +1,6 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
 import { community_data } from "../../dummy-data/communitydata";
+import { Link } from "react-router-dom";
 
 const Community = () => {
   return (
@@ -12,10 +13,10 @@ const Community = () => {
               <Box key={index}>
                 {item.map((obj) => (
                   <Grid item key={obj.id} >
-                    <Box>
-                      <Box component="img" src={obj.img} />
+                    <Link to="/" style={{ textDecoration: 'none', color: '#000' }}>
+                        <Box component="img" src={obj.img} />
                       <Typography sx={{ fontSize: '14px', fontWeight: '600', lineHeight: '19px' }}>{obj.title}</Typography>
-                    </Box>
+                    </Link>
                   </Grid>
                 ))}
               </Box>
