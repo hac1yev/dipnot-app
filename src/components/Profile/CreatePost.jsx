@@ -50,6 +50,13 @@ const CreatePost = () => {
     const handleClose = () => {
       setOpen(false);
     };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        console.log("Dialiasd");
+    };
+
     return (
         <>
             <Box className="create-post-form-wrapper" onClick={handleClickOpen}>
@@ -73,16 +80,9 @@ const CreatePost = () => {
                 className="dialog-wrapper"
                 open={open}
                 onClose={handleClose}
+                onSubmit={handleSubmit}
                 PaperProps={{
-                component: 'form',
-                onSubmit: (event) => {
-                    event.preventDefault();
-                    const formData = new FormData(event.currentTarget);
-                    const formJson = Object.fromEntries(formData.entries());
-                    const email = formJson.email;
-                    console.log(email);
-                    handleClose();
-                },
+                    component: 'form',
                 }}
             >
                 <DialogTitle variant="h4">Yarat</DialogTitle>

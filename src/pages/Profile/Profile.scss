@@ -28,7 +28,6 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
     display: flex;
-    justify-content: center;
 
     .tab-li {
         color: rgba(51, 51, 51, 1);
@@ -59,7 +58,7 @@
 
 .tabs-ul .css-6nyzm1-MuiTabs-indicator {
     display: none!important;
-}
+} 
 
 .dialog-wrapper div > form{
     padding: 20px;
@@ -68,8 +67,99 @@
     margin: 0;
 }
 
+.profile-posts-tabpanel > div {
+    padding: 20px 0;
+}
+
+.profile-list {
+    width: 23%;
+    position: fixed;
+    top: 112px;
+    bottom: 0;
+}
+
+.profile-list > div {
+    overflow: hidden;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    height: calc(100vh - 112px);
+}
+
+.profile-list > div::-webkit-scrollbar {
+    display: none;
+}
+
+.profile-img-wrap {
+    position: relative;
+    width: 95px;
+    height: 95px;
+    cursor: pointer;
+    flex-shrink: 0;
+  
+    .profile-img {
+      position: relative;
+      width: 100%!important;
+      height: 100%;   
+    }
+  
+    &:hover::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border-radius: 50%;
+      z-index: 10;
+      background-color: rgba(0, 0, 0, 0.2); 
+    }
+  
+    .profile-img-icon {
+      background-color: #ddd;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      position: absolute;
+      bottom: 0;    
+      right: 0;
+      z-index: 20;
+
+      >svg {
+        width: 17px;
+        height: 17px;
+      }
+    }
+}
+  
+
+
 @media screen and (max-width: 1199.5px) {
+    .profile-list {
+        width: 100%;
+        position: static;
+        margin-top: 15px;
+        margin-top: 15px;
+    }
+
+    .profile-list > div {
+        width: 100%;
+        overflow: initial;
+        overflow-y: initial;
+        height: auto;
+    }
+
     .profile-grid {
+        margin-top: 15px;
+    }
+}
+
+
+@media screen and (max-width: 599.5px) {
+    .create-post-form-wrapper {
         margin-top: 15px;
     }
 }

@@ -1,6 +1,7 @@
 import { Box, Grid, Toolbar } from '@mui/material';
 import './Profile.scss';
 import ProfileComponent from '../../components/Profile/ProfileComponent';
+import ProfileRightbar from '../../components/Profile/ProfileRightbar';
 
 const Profile = () => {
     return (
@@ -22,7 +23,7 @@ const Profile = () => {
                     <ProfileComponent />
                 </Grid>
                 <Grid container lg={4} sx={{ px: 1 }} className="profile-grid">
-                    
+                    <ProfileRightbar />
                 </Grid>
             </Grid>
         </Box>
