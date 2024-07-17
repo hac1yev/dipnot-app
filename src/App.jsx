@@ -1,16 +1,36 @@
-import { BrowserRouter } from "react-router-dom"
+import { Navigate, Route, Routes } from "react-router-dom"
 import Dashboard from "./components/Dashboard/Dashboard"
-import { ThemeProvider } from "@mui/material"
-import theme from "./components/theme"
+import Home from "./pages/Home/Home"
+import Post from "./pages/Post/Post"
+import Profile from "./pages/Profile/Profile"
+import { Box } from "@mui/material"
+import Login from "./pages/Login/Login"
+import Register from "./pages/Register/Register"
+import { useState } from "react"
 
 function App() {
+  const [isAuth,setIsAuth] = useState(true);
 
   return (
-    <BrowserRouter>
-      <ThemeProvider theme={theme}>
-        <Dashboard />
-      </ThemeProvider>
-    </BrowserRouter>
+    <>
+      {!isAuth ? ( 
+        <Routes>
+          <Route path="/" element={<Navigate to="/login" />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+      ) : (
+        <Box sx={{ display: "flex" }}>
+          <Dashboard />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/posts/:postId" element={<Post />} />
+            <Route path="/profile" element={<Profile />} />
+            {/* <Route path="/popular" element={<Popular />} /> */}
+          </Routes>
+        </Box>
+      )}  
+    </>
   )
 }
 

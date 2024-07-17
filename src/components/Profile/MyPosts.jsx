@@ -46,52 +46,52 @@ const MyPosts = () => {
                             horizontal: 'left',
                         }}
                     >
-                    <List sx={{ pb: '10px', width: '130px' }}>
-                        <ListItem
-                            disablePadding
-                            className="sidebar-list-item"
-                        >
-                            <ListItemButton sx={{ py: 0 }}>
-                                <ListItemIcon sx={{ minWidth: '40px' }}>
-                                    <LoopIcon />
-                                </ListItemIcon>
-                                <ListItemText primary="Paylaş" />
-                            </ListItemButton>
-                        </ListItem>
-                        <ListItem
-                            disablePadding
-                            className="sidebar-list-item"
-                        >
-                            <ListItemButton sx={{ py: 0 }}>
-                                <ListItemIcon sx={{ minWidth: '40px' }}>
-                                    <IosShareIcon />
-                                </ListItemIcon>
-                                <ListItemText primary="Göndər" />
-                            </ListItemButton>
-                        </ListItem>
-                        <ListItem
-                            disablePadding
-                            className="sidebar-list-item"
-                        >
-                            <ListItemButton sx={{ py: 0 }}>
-                                <ListItemIcon sx={{ minWidth: '40px' }}>
-                                    <VisibilityOffOutlinedIcon />
-                                </ListItemIcon>
-                                <ListItemText primary="Gizlət" />
-                            </ListItemButton>
-                        </ListItem>
-                        <ListItem
-                            disablePadding
-                            className="sidebar-list-item"
-                        >
-                            <ListItemButton sx={{ py: 0 }}>
-                                <ListItemIcon sx={{ minWidth: '40px' }}>
-                                    <DeleteIcon />
-                                </ListItemIcon>
-                                <ListItemText primary="Sil" />
-                            </ListItemButton>
-                        </ListItem>
-                    </List>
+                      <List sx={{ pb: '10px', width: '130px' }}>
+                          <ListItem
+                              disablePadding
+                              className="sidebar-list-item"
+                          >
+                              <ListItemButton sx={{ py: 0 }}>
+                                  <ListItemIcon sx={{ minWidth: '40px' }}>
+                                      <LoopIcon />
+                                  </ListItemIcon>
+                                  <ListItemText primary="Paylaş" />
+                              </ListItemButton>
+                          </ListItem>
+                          <ListItem
+                              disablePadding
+                              className="sidebar-list-item"
+                          >
+                              <ListItemButton sx={{ py: 0 }}>
+                                  <ListItemIcon sx={{ minWidth: '40px' }}>
+                                      <IosShareIcon />
+                                  </ListItemIcon>
+                                  <ListItemText primary="Göndər" />
+                              </ListItemButton>
+                          </ListItem>
+                          <ListItem
+                              disablePadding
+                              className="sidebar-list-item"
+                          >
+                              <ListItemButton sx={{ py: 0 }}>
+                                  <ListItemIcon sx={{ minWidth: '40px' }}>
+                                      <VisibilityOffOutlinedIcon />
+                                  </ListItemIcon>
+                                  <ListItemText primary="Gizlət" />
+                              </ListItemButton>
+                          </ListItem>
+                          <ListItem
+                              disablePadding
+                              className="sidebar-list-item"
+                          >
+                              <ListItemButton sx={{ py: 0 }}>
+                                  <ListItemIcon sx={{ minWidth: '40px' }}>
+                                      <DeleteIcon />
+                                  </ListItemIcon>
+                                  <ListItemText primary="Sil" />
+                              </ListItemButton>
+                          </ListItem>
+                      </List>
                     </Popover>
                 </>
             }

@@ -10,11 +10,8 @@ import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
 import dipnot_logo from "../../assets/dipnote-logo.svg";
 import SidebarMenu from "../SidebarMenu/SidebarMenu";
-import Home from "../../pages/Home/Home";
 import "./Dashboard.scss";
-import { Link, Route, Routes } from "react-router-dom";
-import Post from "../../pages/Post/Post";
-import Profile from "../../pages/Profile/Profile";
+import { Link } from "react-router-dom";
 
 const drawerWidth = 340;
 
@@ -133,7 +130,7 @@ export default function Dashboard() {
   };
 
   return (
-    <Box sx={{ display: "flex" }}>
+      <>
         <CssBaseline />
         <AppBar
           position="absolute"
@@ -226,15 +223,17 @@ export default function Dashboard() {
               height: "90px",
             }}
           >
-            <Box
-              component="img"
-              sx={{
-                width: 193,
-                height: 43,
-              }}
-              alt="The house from the offer."
-              src={dipnot_logo}
-            />
+            <Link to="/">
+              <Box
+                component="img"
+                sx={{
+                  width: 193,
+                  height: 43,
+                }}
+                alt="The house from the offer."
+                src={dipnot_logo}
+              />
+            </Link>
             <IconButton
               edge="start"
               color="#000"
@@ -257,12 +256,6 @@ export default function Dashboard() {
           <Divider/>
           <SidebarMenu />
         </Drawer>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/posts/:postId" element={<Post />} />
-          <Route path="/profile" element={<Profile />} />
-          {/* <Route path="/popular" element={<Popular />} /> */}
-        </Routes>
-    </Box>
+      </>
   );
 }
