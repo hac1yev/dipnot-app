@@ -95,7 +95,7 @@ const RegisterForm = () => {
                     </Box>
                     <Box className="space-between" sx={{ gap: '8px', my: 2 }}>
                         <Box component="span" sx={{ flex: 1, width: '100%', height: '1px', display: 'block', bgcolor: 'rgba(130, 130, 130, 0.2)' }}></Box>
-                        <Box component="span" sx={{ color: 'rgba(130, 130, 130, 1)' }}>or continue with</Box>
+                        <Box component="span" sx={{ color: 'rgba(130, 130, 130, 1)' }}>və ya daxil ol</Box>
                         <Box component="span" sx={{ flex: 1, width: '100%', height: '1px', display: 'block', bgcolor: 'rgba(130, 130, 130, 0.2)' }}></Box>
                     </Box>
                     <Box className="space-between" sx={{ gap: '10px', mt: 3 }}>
