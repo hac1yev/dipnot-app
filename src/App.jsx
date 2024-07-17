@@ -9,13 +9,13 @@ import Register from "./pages/Register/Register"
 import { useState } from "react"
 
 function App() {
-  const [isAuth,setIsAuth] = useState(true);
+  const [isAuth,setIsAuth] = useState(false);
 
   return (
     <>
       {!isAuth ? ( 
         <Routes>
-          <Route path="/" element={<Navigate to="/login" />} />
+          <Route path="*" element={<Navigate to="/login" />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Routes>
