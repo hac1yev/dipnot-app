@@ -15,7 +15,6 @@ export default function LoginForm() {
 
     return (
         <Container component="main" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', py: 4 }} maxWidth="xs">
-            <Link to="/" style={{ width: 'fit-content' }}>
               <Box
                 component="img"
                 sx={{
@@ -25,7 +24,6 @@ export default function LoginForm() {
                 alt="The house from the offer."
                 src={dipnot_logo}
               />
-            </Link>
             <CssBaseline />
             <Box
                 sx={{
@@ -67,11 +65,12 @@ export default function LoginForm() {
                         label="Remember me"
                     /> */}
                     <Button
+                        className='login-button'
                         size='large'
                         type="submit"
                         fullWidth
                         variant="contained"
-                        sx={{ mt: 3, mb: 2, textTransform: 'inherit' }}
+                        sx={{ mt: 3, mb: 2 }}
                     >
                         Daxil ol
                     </Button>

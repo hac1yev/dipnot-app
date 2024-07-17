@@ -40,6 +40,11 @@
     }
 }
 
+.login-button {
+    text-transform: inherit; 
+    background-color: rgba(5, 104, 214, 1)!important;
+}
+
 @media screen and (max-width: 1200px) {
     .logreg-text{
         font-size: 30px!important;
