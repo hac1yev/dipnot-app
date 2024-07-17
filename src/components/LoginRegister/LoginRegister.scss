@@ -40,8 +40,9 @@
     }
 }
 
-.login-button {
-    text-transform: inherit; 
+.login-button,
+.register-button {
+    text-transform: inherit!important; 
     background-color: rgba(5, 104, 214, 1)!important;
 }
 

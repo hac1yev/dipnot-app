@@ -79,7 +79,7 @@ const RegisterForm = () => {
                         label="Remember me"
                     /> */}
                     <Button
-                        className='login-button'
+                        className='register-button'
                         size='large'
                         type="submit"
                         fullWidth
