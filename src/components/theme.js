@@ -32,14 +32,10 @@ const theme = createTheme({
       },
     },
     h3: {
-      fontSize: '40px',
-      color: '#2D2D2B',
-      fontWeight: '700',
-      lineHeight: '44px',
-      '@media (max-width:900px)': {
-        fontSize: '28px',
-        lineHeight: '34px',
-      },
+      fontSize: '26px',
+      color: '#000',
+      fontWeight: '600',
+      lineHeight: '33px',
     },
     h4: {
       fontSize: '22px',
