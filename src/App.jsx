@@ -7,9 +7,10 @@ import { Box } from "@mui/material"
 import Login from "./pages/Login/Login"
 import Register from "./pages/Register/Register"
 import { useState } from "react"
+import { useSelector } from "react-redux"
 
 function App() {
-  const [isAuth,setIsAuth] = useState(false);
+  const isAuth = useSelector(state => state.authReducer.userIsExist);
 
   return (
     <>
@@ -26,6 +27,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/posts/:postId" element={<Post />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/login" element={<Navigate to="/" />} />
             {/* <Route path="/popular" element={<Popular />} /> */}
           </Routes>
         </Box>

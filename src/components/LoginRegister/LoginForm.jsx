@@ -8,13 +8,21 @@ import Container from '@mui/material/Container';
 import dipnot_logo from "../../assets/dipnote-logo.svg";
 import PasswordInput from './PasswordInput';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { authSliceActions } from '../../store/auth-slice';
 
 export default function LoginForm() {
     const [password,setPassword] = useState("");
+    const [email,setEmail] = useState("");
+    const dispatch = useDispatch();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        
+        if(email === "admin@gmail.com" && password === "admin1234") {
+            dispatch(authSliceActions.loginDipnot());
+        }else{
+            return;
+        }
     };
 
     const handlePassword = (e) => {
@@ -55,6 +63,7 @@ export default function LoginForm() {
                         id="email"
                         label="Email"
                         name="email"
+                        onChange={(e) => setEmail(e.target.value)}
                         autoComplete="email"
                         autoFocus
                     />
