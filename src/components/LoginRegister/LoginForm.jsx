@@ -62,6 +62,7 @@ export default function LoginForm() {
                         fullWidth
                         id="email"
                         label="Email"
+                        placeholder='admin@gmail.com'
                         name="email"
                         onChange={(e) => setEmail(e.target.value)}
                         autoComplete="email"
