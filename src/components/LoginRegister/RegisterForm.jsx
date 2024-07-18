@@ -26,7 +26,7 @@ const RegisterForm = () => {
     };    
 
     return (
-        <Container component="main" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', py: 2 }} maxWidth="xs">
+        <Container component="main" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', pt: 2 }} maxWidth="xs">
             <Box
                 component="img"
                 sx={{
@@ -39,13 +39,13 @@ const RegisterForm = () => {
             <CssBaseline />
             <Box
                 sx={{
-                    marginTop: 5,
+                    marginTop: 4,
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
                 }}
             >
-                <Typography variant="h4">
+                <Typography variant="h3">
                     Qeydiyyatdan keçin
                 </Typography>
                 <Typography variant="subtitle1" sx={{ textAlign: 'center', mb: 1, mt: 1 }}>
@@ -82,7 +82,7 @@ const RegisterForm = () => {
                         type="submit"
                         fullWidth
                         variant="contained"
-                        sx={{ mt: 3, mb: 2 }}
+                        sx={{ mt: 2, mb: 1 }}
                     >
                         Daxil ol
                     </Button>
@@ -113,8 +113,8 @@ const RegisterForm = () => {
                             </IconButton>
                         </Box>
                     </Box>
-                    <Typography variant='subtitle1' sx={{ textAlign: 'center', my: 3 }}>
-                        By clicking continue, you agree to our <b>Terms of Service</b> and <b>Privacy Policy</b>
+                    <Typography variant='subtitle1' sx={{ textAlign: 'center', mt: 3 }}>
+                        Davam et düyməsini klikləməklə, <b>Xidmət Şərtlərimiz</b> və <b>Məxfilik Siyasətimizlə</b> razılaşırsınız
                     </Typography>
                 </Box>
             </Box>

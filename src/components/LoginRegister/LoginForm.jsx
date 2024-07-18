@@ -41,7 +41,7 @@ export default function LoginForm() {
                     alignItems: 'center',
                 }}
             >
-                <Typography variant="h4">
+                <Typography variant="h3">
                     Giriş et
                 </Typography>
                 <Typography variant="subtitle1" sx={{ textAlign: 'center', mb: 2, mt: 2 }}>
@@ -75,7 +75,7 @@ export default function LoginForm() {
                         </Link>
                     </Box>
                     <Typography variant='subtitle1' sx={{ textAlign: 'center', my: 3 }}>
-                        By clicking continue, you agree to our <b>Terms of Service</b> and <b>Privacy Policy</b>
+                        Davam et düyməsini klikləməklə, <b>Xidmət Şərtlərimiz</b> və <b>Məxfilik Siyasətimizlə</b> razılaşırsınız
                     </Typography>
                 </Box>
             </Box>
