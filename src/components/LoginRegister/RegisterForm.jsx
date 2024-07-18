@@ -10,12 +10,20 @@ import google from '../../assets/google.svg';
 import apple from '../../assets/apple.svg';
 import facebook from '../../assets/facebook.svg';
 import { IconButton } from '@mui/material';
+import { useState } from 'react';
+import PasswordInput from './PasswordInput';
 
 const RegisterForm = () => {
+    const [password,setPassword] = useState("");
+
     const handleSubmit = (e) => {
         e.preventDefault();
         
     };
+
+    const handlePassword = (e) => {
+        setPassword(e.target.value);
+    };    
 
     return (
         <Container component="main" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', py: 2 }} maxWidth="xs">
@@ -63,16 +71,7 @@ const RegisterForm = () => {
                         name="email"
                         autoComplete="email"
                     />
-                    <TextField
-                        margin="dense"
-                        required
-                        fullWidth
-                        name="password"
-                        label="Şifrə"
-                        type="password"
-                        id="password"
-                        autoComplete="current-password"
-                    />
+                    <PasswordInput password={password} handlePassword={handlePassword} />
                     {/* <FormControlLabel
                         control={<Checkbox value="remember" color="primary" />}
                         label="Remember me"
