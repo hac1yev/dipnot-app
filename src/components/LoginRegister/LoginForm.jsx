@@ -6,12 +6,20 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import dipnot_logo from "../../assets/dipnote-logo.svg";
+import PasswordInput from './PasswordInput';
+import { useState } from 'react';
 
 export default function LoginForm() {
+    const [password,setPassword] = useState("");
+
     const handleSubmit = (e) => {
         e.preventDefault();
         
     };
+
+    const handlePassword = (e) => {
+        setPassword(e.target.value);
+    };    
 
     return (
         <Container component="main" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', py: 4 }} maxWidth="xs">
@@ -41,7 +49,7 @@ export default function LoginForm() {
                 </Typography>
                 <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
                     <TextField
-                        margin="normal"
+                        margin="dense"
                         required
                         fullWidth
                         id="email"
@@ -50,20 +58,7 @@ export default function LoginForm() {
                         autoComplete="email"
                         autoFocus
                     />
-                    <TextField
-                        margin="normal"
-                        required
-                        fullWidth
-                        name="password"
-                        label="Şifrə"
-                        type="password"
-                        id="password"
-                        autoComplete="current-password"
-                    />
-                    {/* <FormControlLabel
-                        control={<Checkbox value="remember" color="primary" />}
-                        label="Remember me"
-                    /> */}
+                    <PasswordInput password={password} handlePassword={handlePassword} />
                     <Button
                         className='login-button'
                         size='large'
