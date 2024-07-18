@@ -62,7 +62,6 @@ const RegisterForm = () => {
                         label="Email"
                         name="email"
                         autoComplete="email"
-                        autoFocus
                     />
                     <TextField
                         margin="dense"
