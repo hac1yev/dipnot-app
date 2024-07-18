@@ -19,6 +19,7 @@ const PasswordInput = ({ password, handlePassword }) => {
       name="password"
       id="password"
       label="Şifrə"
+      placeholder="admin1234"
       type={showPassword ? "text" : "password"}
       value={password}
       onChange={handlePassword}
