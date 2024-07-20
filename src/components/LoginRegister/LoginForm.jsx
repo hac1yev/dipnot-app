@@ -1,7 +1,7 @@
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
@@ -9,37 +9,63 @@ import dipnot_logo from "../../assets/dipnote-logo.svg";
 import PasswordInput from './PasswordInput';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { authSliceActions } from '../../store/auth-slice';
+import axios from 'axios';
+import { loginSuccess } from '../../store/loginSlice';
+
 
 export default function LoginForm() {
-    const [password,setPassword] = useState("");
-    const [email,setEmail] = useState("");
-    const dispatch = useDispatch();
+    const [password, setPassword] = useState("");
+    const [email, setEmail] = useState("");
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if(email === "admin@gmail.com" && password === "admin1234") {
-            dispatch(authSliceActions.loginDipnot());
-        }else{
-            return;
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const [rememberMe, setRememberMe] = useState(false);
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        const formData = {
+            username: email,
+            password: password,
+            scope: rememberMe,
+        };
+
+        const config = {
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+            },
+        };
+
+        try {
+            const response = await axios.post(
+                "http://195.35.56.202:8080/login",
+                formData,
+                config
+            );
+            localStorage.setItem("userInfo", JSON.stringify(response.data));
+            dispatch(loginSuccess(response.data));
+            if (response.status === 200) {
+                navigate("/personal");
+            }
+        } catch (error) {
+            console.error("Sign-in failed!", error.response.data);
         }
     };
 
     const handlePassword = (e) => {
         setPassword(e.target.value);
-    };    
+    };
 
     return (
         <Container component="main" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', py: 4 }} maxWidth="xs">
-              <Box
+            <Box
                 component="img"
                 sx={{
-                  width: 193,
-                  height: 43,
+                    width: 193,
+                    height: 43,
                 }}
                 alt="The house from the offer."
                 src={dipnot_logo}
-              />
+            />
             <CssBaseline />
             <Box
                 sx={{
@@ -84,6 +110,17 @@ export default function LoginForm() {
                             Qeydiyyat
                         </Link>
                     </Box>
+                    <div style={{ display: "flex", gap: "15px" }}>
+                        <label htmlFor="remember">Məni xatırla</label>
+                        <input
+                            type="checkbox"
+                            onChange={(e) => setRememberMe(e.target.checked)}
+                            value="remember"
+                            id="remember"
+                            checked={rememberMe}
+                            color="primary"
+                        />
+                    </div>
                     <Typography variant='subtitle1' sx={{ textAlign: 'center', my: 3 }}>
                         Davam et düyməsini klikləməklə, <b>Xidmət Şərtlərimiz</b> və <b>Məxfilik Siyasətimizlə</b> razılaşırsınız
                     </Typography>

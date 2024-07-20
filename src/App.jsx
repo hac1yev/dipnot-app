@@ -6,15 +6,14 @@ import Profile from "./pages/Profile/Profile"
 import { Box } from "@mui/material"
 import Login from "./pages/Login/Login"
 import Register from "./pages/Register/Register"
-import { useState } from "react"
 import { useSelector } from "react-redux"
 
 function App() {
-  const isAuth = useSelector(state => state.authReducer.userIsExist);
+  const { isLoggedIn } = useSelector((state) => state.login);
 
   return (
     <>
-      {!isAuth ? ( 
+      {!isLoggedIn ? (
         <Routes>
           <Route path="*" element={<Navigate to="/login" />} />
           <Route path="/login" element={<Login />} />
@@ -31,7 +30,7 @@ function App() {
             {/* <Route path="/popular" element={<Popular />} /> */}
           </Routes>
         </Box>
-      )}  
+      )}
     </>
   )
 }

@@ -33,68 +33,68 @@ const Posts = () => {
             }
             action={
               <>
-                    <IconButton aria-label="settings" aria-describedby={id} onClick={(e) => setAnchorEl(e.currentTarget)}>
-                        <MoreVertIcon />
-                    </IconButton>
-                    <Popover
-                        className='comment-popover'
-                        id={id}
-                        open={open}
-                        anchorEl={anchorEl}
-                        onClose={() => setAnchorEl(null)}
-                        anchorOrigin={{
-                            vertical: 'bottom',
-                            horizontal: 'left',
-                        }}
+                <IconButton aria-label="settings" aria-describedby={id} onClick={(e) => setAnchorEl(e.currentTarget)}>
+                  <MoreVertIcon />
+                </IconButton>
+                <Popover
+                  className='comment-popover'
+                  id={id}
+                  open={open}
+                  anchorEl={anchorEl}
+                  onClose={() => setAnchorEl(null)}
+                  anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'left',
+                  }}
+                >
+                  <List sx={{ pb: '10px', width: '130px' }}>
+                    <ListItem
+                      disablePadding
+                      className="sidebar-list-item"
                     >
-                      <List sx={{ pb: '10px', width: '130px' }}>
-                          <ListItem
-                              disablePadding
-                              className="sidebar-list-item"
-                          >
-                              <ListItemButton sx={{ py: 0 }}>
-                                  <ListItemIcon sx={{ minWidth: '40px' }}>
-                                      <LoopIcon />
-                                  </ListItemIcon>
-                                  <ListItemText primary="Paylaş" />
-                              </ListItemButton>
-                          </ListItem>
-                          <ListItem
-                              disablePadding
-                              className="sidebar-list-item"
-                          >
-                              <ListItemButton sx={{ py: 0 }}>
-                                  <ListItemIcon sx={{ minWidth: '40px' }}>
-                                      <IosShareIcon />
-                                  </ListItemIcon>
-                                  <ListItemText primary="Göndər" />
-                              </ListItemButton>
-                          </ListItem>
-                          <ListItem
-                              disablePadding
-                              className="sidebar-list-item"
-                          >
-                              <ListItemButton sx={{ py: 0 }}>
-                                  <ListItemIcon sx={{ minWidth: '40px' }}>
-                                      <VisibilityOffOutlinedIcon />
-                                  </ListItemIcon>
-                                  <ListItemText primary="Gizlət" />
-                              </ListItemButton>
-                          </ListItem>
-                          <ListItem
-                              disablePadding
-                              className="sidebar-list-item"
-                          >
-                              <ListItemButton sx={{ py: 0 }}>
-                                  <ListItemIcon sx={{ minWidth: '40px' }}>
-                                      <DeleteIcon />
-                                  </ListItemIcon>
-                                  <ListItemText primary="Sil" />
-                              </ListItemButton>
-                          </ListItem>
-                      </List>
-                    </Popover>
-                </>
+                      <ListItemButton sx={{ py: 0 }}>
+                        <ListItemIcon sx={{ minWidth: '40px' }}>
+                          <LoopIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Paylaş" />
+                      </ListItemButton>
+                    </ListItem>
+                    <ListItem
+                      disablePadding
+                      className="sidebar-list-item"
+                    >
+                      <ListItemButton sx={{ py: 0 }}>
+                        <ListItemIcon sx={{ minWidth: '40px' }}>
+                          <IosShareIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Göndər" />
+                      </ListItemButton>
+                    </ListItem>
+                    <ListItem
+                      disablePadding
+                      className="sidebar-list-item"
+                    >
+                      <ListItemButton sx={{ py: 0 }}>
+                        <ListItemIcon sx={{ minWidth: '40px' }}>
+                          <VisibilityOffOutlinedIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Gizlət" />
+                      </ListItemButton>
+                    </ListItem>
+                    <ListItem
+                      disablePadding
+                      className="sidebar-list-item"
+                    >
+                      <ListItemButton sx={{ py: 0 }}>
+                        <ListItemIcon sx={{ minWidth: '40px' }}>
+                          <DeleteIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Sil" />
+                      </ListItemButton>
+                    </ListItem>
+                  </List>
+                </Popover>
+              </>
             }
             title={
               <div style={{ display: 'flex', gap: '5px' }}>
@@ -105,7 +105,7 @@ const Posts = () => {
             }
             subheader="01.04.2024"
           />
-          <Link to="/posts/37264"  className="post-link">
+          <Link to="/posts/37264" className="post-link">
             <CardContent>
               <Typography variant="h6">
                 Top GitHub repositories

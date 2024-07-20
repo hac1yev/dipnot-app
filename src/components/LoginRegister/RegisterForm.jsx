@@ -1,29 +1,54 @@
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import dipnot_logo from "../../assets/dipnote-logo.svg";
-import google from '../../assets/google.svg';
-import apple from '../../assets/apple.svg';
-import facebook from '../../assets/facebook.svg';
-import { IconButton } from '@mui/material';
+// import google from '../../assets/google.svg';
+// import apple from '../../assets/apple.svg';
+// import facebook from '../../assets/facebook.svg';
+// import { IconButton } from '@mui/material';
 import { useState } from 'react';
 import PasswordInput from './PasswordInput';
+import axios from 'axios';
 
 const RegisterForm = () => {
-    const [password,setPassword] = useState("");
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        
-    };
+    const [password, setPassword] = useState("");
 
     const handlePassword = (e) => {
         setPassword(e.target.value);
-    };    
+    };
+
+    const navigate = useNavigate();
+    // const [checked, setIsChecked] = useState(false);
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        const data = new FormData(event.currentTarget);
+        const formData = {
+            email: data.get("email"),
+            password: data.get("password"),
+            username: data.get("username"),
+            last_name: data.get("surname"),
+            first_name: data.get("name"),
+            get_email: false,
+        };
+
+        try {
+            const response = await axios.post(
+                "http://195.35.56.202:8080/register",
+                formData,
+                {
+                    mode: "no-cors",
+                }
+            );
+            navigate("/signin");
+            return response;
+        } catch (error) {
+            console.error("Registration failed!", error);
+        }
+    };
 
     return (
         <Container component="main" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', pt: 2 }} maxWidth="xs">
@@ -62,6 +87,28 @@ const RegisterForm = () => {
                         autoComplete="name"
                         autoFocus
                     />
+
+                    <TextField
+                        margin="dense"
+                        required
+                        fullWidth
+                        id="surname"
+                        label="Soy Ad"
+                        name="surname"
+                        autoComplete="surname"
+                        autoFocus
+                    />
+
+                    <TextField
+                        margin="dense"
+                        required
+                        fullWidth
+                        id="username"
+                        label="İstifadəçi Adı"
+                        name="username"
+                        autoComplete="username"
+                        autoFocus
+                    />
                     <TextField
                         margin="dense"
                         required
@@ -93,10 +140,10 @@ const RegisterForm = () => {
                     </Box>
                     <Box className="space-between" sx={{ gap: '8px', my: 2 }}>
                         <Box component="span" sx={{ flex: 1, width: '100%', height: '1px', display: 'block', bgcolor: 'rgba(130, 130, 130, 0.2)' }}></Box>
-                        <Box component="span" sx={{ color: 'rgba(130, 130, 130, 1)' }}>və ya daxil ol</Box>
+                        {/* <Box component="span" sx={{ color: 'rgba(130, 130, 130, 1)' }}>və ya daxil ol</Box> */}
                         <Box component="span" sx={{ flex: 1, width: '100%', height: '1px', display: 'block', bgcolor: 'rgba(130, 130, 130, 0.2)' }}></Box>
                     </Box>
-                    <Box className="space-between" sx={{ gap: '10px', mt: 3 }}>
+                    {/* <Box className="space-between" sx={{ gap: '10px', mt: 3 }}>
                         <Box className="flex-column" sx={{ width: '100%', height: '50px', border: '1px solid rgba(188, 190, 192, 1)', borderRadius: '10px' }}>
                             <IconButton sx={{ width: '100%', height: '100%', p: 0, borderRadius: '10px' }}>
                                 <Box component="img" src={google} />
@@ -112,9 +159,9 @@ const RegisterForm = () => {
                                 <Box component="img" src={facebook} />
                             </IconButton>
                         </Box>
-                    </Box>
-                    <Typography variant='subtitle1' sx={{ textAlign: 'center', mt: 3 }}>
-                        Davam et düyməsini klikləməklə, <b>Xidmət Şərtlərimiz</b> və <b>Məxfilik Siyasətimizlə</b> razılaşırsınız
+                    </Box> */}
+                    <Typography variant='subtitle1' sx={{ mt: 3 }}>
+                        Qeydiyyatdan keçərək <b>Xidmət Şərtlərimiz</b> və <b>Məxfilik Siyasətimizlə</b> razılaşırsınız
                     </Typography>
                 </Box>
             </Box>
